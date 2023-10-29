@@ -1,55 +1,57 @@
 import java.util.Scanner;
 
-public class EquationSolve{
+public class EquationSolve {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Equation Solver Menu:");
-        System.out.println("1. Solve a first-degree equation (ax + b = 0)");
-        System.out.println("2. Solve a system of first-degree equations (ax1 + bx2 = c and dx1 + ex2 = f)");
-        System.out.println("3. Solve a second-degree equation (ax^2 + bx + c = 0)");
-        System.out.print("Enter your choice (1/2/3): ");
+        System.out.println("Menu Giải Phương Trình:");
+        System.out.println("1. Giải phương trình bậc nhất (ax + b = 0)");
+        System.out.println("2. Giải hệ phương trình bậc nhất (ax1 + bx2 = c và dx1 + ex2 = f)");
+        System.out.println("3. Giải phương trình bậc hai (ax^2 + bx + c = 0)");
+        System.out.print("Nhập lựa chọn của bạn (1/2/3): ");
         int choice = scanner.nextInt();
 
         switch (choice) {
             case 1:
-                solveFirstDegreeEquation();
+                solveFirstDegreeEquation(); // Gọi hàm giải phương trình bậc nhất
                 break;
             case 2:
-                solveSystemOfFirstDegreeEquations();
+                solveSystemOfFirstDegreeEquations(); // Gọi hàm giải hệ phương trình bậc nhất
                 break;
             case 3:
-                solveSecondDegreeEquation();
+                solveSecondDegreeEquation(); // Gọi hàm giải phương trình bậc hai
                 break;
             default:
-                System.out.println("Invalid choice. Please select 1, 2, or 3.");
+                System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn 1, 2 hoặc 3.");
         }
 
         scanner.close();
     }
 
+    // Hàm giải phương trình bậc nhất
     public static void solveFirstDegreeEquation() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the value of a: ");
+        System.out.print("Nhập giá trị của a: ");
         double a = scanner.nextDouble();
-        System.out.print("Enter the value of b: ");
+        System.out.print("Nhập giá trị của b: ");
         double b = scanner.nextDouble();
 
         if (a != 0) {
             double x = -b / a;
-            System.out.println("The solution is x = " + x);
+            System.out.println("Nghiệm của phương trình là x = " + x);
         } else if (b == 0) {
-            System.out.println("The equation has infinitely many solutions.");
+            System.out.println("Phương trình có vô số nghiệm.");
         } else {
-            System.out.println("The equation has no solution.");
+            System.out.println("Phương trình không có nghiệm.");
         }
     }
 
+    // Hàm giải hệ phương trình bậc nhất
     public static void solveSystemOfFirstDegreeEquations() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the values of a11, a12, b1, a21, a22, and b2 (space-separated): ");
+        System.out.print("Nhập giá trị của a11, a12, b1, a21, a22, và b2 (cách nhau bởi dấu cách): ");
         double a11 = scanner.nextDouble();
         double a12 = scanner.nextDouble();
         double b1 = scanner.nextDouble();
@@ -64,18 +66,19 @@ public class EquationSolve{
         if (D != 0) {
             double x1 = D1 / D;
             double x2 = D2 / D;
-            System.out.println("The solutions are x1 = " + x1 + " and x2 = " + x2);
+            System.out.println("Nghiệm của hệ phương trình là x1 = " + x1 + " và x2 = " + x2);
         } else if (D1 == 0 && D2 == 0) {
-            System.out.println("The system has infinitely many solutions.");
+            System.out.println("Hệ phương trình có vô số nghiệm.");
         } else {
-            System.out.println("The system has no solution.");
+            System.out.println("Hệ phương trình không có nghiệm.");
         }
     }
 
+    // Hàm giải phương trình bậc hai
     public static void solveSecondDegreeEquation() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the values of a, b, and c (space-separated): ");
+        System.out.print("Nhập giá trị của a, b, và c (cách nhau bởi dấu cách): ");
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
         double c = scanner.nextDouble();
@@ -83,16 +86,16 @@ public class EquationSolve{
         double discriminant = b * b - 4 * a * c;
 
         if (a == 0) {
-            System.out.println("This is not a second-degree equation.");
+            System.out.println("Đây không phải là phương trình bậc hai.");
         } else if (discriminant > 0) {
             double x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
             double x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            System.out.println("The solutions are x1 = " + x1 + " and x2 = " + x2);
+            System.out.println("Nghiệm của phương trình là x1 = " + x1 + " và x2 = " + x2);
         } else if (discriminant == 0) {
             double x = -b / (2 * a);
-            System.out.println("The double root is x = " + x);
+            System.out.println("Nghiệm kép là x = " + x);
         } else {
-            System.out.println("The equation has no real roots.");
+            System.out.println("Phương trình không có nghiệm thực.");
         }
     }
 }
