@@ -20,6 +20,46 @@ public class Cart {
         }
     }
 
+  /*   public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (int j = 0; j < dvdList.length; j++) {
+            if (amount == MAX_NUMBERS_ORDERED) {
+                System.out.println("Giỏ hàng đã đầy, không thể thêm");
+                return;
+            }
+    
+            for (int i = 0; i < MAX_NUMBERS_ORDERED; i++) {
+                if (itemsOrdered[i] == null) {
+                    itemsOrdered[i] = dvdList[j];
+                    amount++;
+                    System.out.println("Đĩa " + dvdList[j].getTitle() + " đã được thêm");
+                    break; // Chuyển đến DVD tiếp theo
+                }
+            }
+        }
+    } */
+
+
+public void addDigitalVideoDisc(DigitalVideoDisc... dvdList) {
+        for (int j = 0; j < dvdList.length; j++) {
+            if (amount == MAX_NUMBERS_ORDERED) {
+                System.out.println("Giỏ hàng đã đầy, không thể thêm");
+                return;
+            }
+    
+            for (int i = 0; i < MAX_NUMBERS_ORDERED; i++) {
+                if (itemsOrdered[i] == null) {
+                    itemsOrdered[i] = dvdList[j];
+                    amount++;
+                    System.out.println("Đĩa " + dvdList[j].getTitle() + " đã được thêm");
+                    break; // Chuyển đến DVD tiếp theo
+                }
+            }
+        }
+    }
+public void addDigitalVideoDisc(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2){
+    addDigitalVideoDisc(dvd1);
+    addDigitalVideoDisc(dvd2);
+}
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         for (int i = 0; i < MAX_NUMBERS_ORDERED; i++) {
             if (itemsOrdered[i] != null && itemsOrdered[i].equals(disc)) {
@@ -52,10 +92,12 @@ public class Cart {
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star War", "Science Fiction", "George Lucas", 87, 24.95f);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
-        anOrder.addDigitalVideoDisc(dvd3); // thêm dvd1
+        /* anOrder.addDigitalVideoDisc(dvd3); // thêm dvd1
         anOrder.addDigitalVideoDisc(dvd1); //them dvd2
         anOrder.addDigitalVideoDisc(dvd2); //thêm dvd3
-        anOrder.removeDigitalVideoDisc(dvd2); // xóa đĩa 2
+        anOrder.removeDigitalVideoDisc(dvd2); // xóa đĩa 2 */
+        DigitalVideoDisc[] dvd={dvd1,dvd2,dvd3};
+        anOrder.addDigitalVideoDisc(dvd1,dvd2);
         System.out.println("Total cost is: " + anOrder.totalCost()); //in ra tổng tiền trong giỏ hàng;
     }
 }
