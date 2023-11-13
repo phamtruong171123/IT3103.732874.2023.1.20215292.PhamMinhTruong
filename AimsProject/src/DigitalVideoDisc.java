@@ -42,7 +42,37 @@ public class DigitalVideoDisc {
         nbDigitalVideoDisc+=1;
     }
 
-
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("DVD - ");
+        
+        if (title != null) {
+            builder.append(title);
+        }
+        builder.append(" - ");
+        
+        if (category != null) {
+            builder.append(category);
+        }
+        builder.append(" - ");
+        
+        if (director != null) {
+            builder.append(director);
+        }
+        builder.append(" - ");
+        
+        if (length > 0) {
+            builder.append(length).append(" minutes");
+        }
+        builder.append(": ");
+        
+        if (cost >= 0) {
+            builder.append(String.format("%.2f $", cost));
+        }
+    
+        return builder.toString();
+    }
+    
 
     public int getID(){
         return id;
