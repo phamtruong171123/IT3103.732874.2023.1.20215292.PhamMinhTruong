@@ -8,5 +8,8 @@ public class CartTest {
         cart.addDigitalVideoDisc(dvd1,dvd2,dvd3);
         cart.printCart();
         cart.Search("Avenger");
+        Store store=new Store();
+        store.addDVD(dvd1,dvd2,dvd3);
+        store.removeDVD(dvd2);
     }
 }
