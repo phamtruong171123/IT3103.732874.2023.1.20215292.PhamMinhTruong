@@ -1,7 +1,8 @@
-package hust.soict.dsai.aims.store.Store;
+package hust.soict.dsai.aims.store;
+
 import java.util.ArrayList;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class Store {
     private ArrayList<DigitalVideoDisc> itemInStore; // lưu trữ các mặt hàng bằng danh sách liên kết
