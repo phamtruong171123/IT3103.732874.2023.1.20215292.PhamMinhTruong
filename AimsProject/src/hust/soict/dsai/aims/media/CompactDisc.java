@@ -7,15 +7,13 @@ import java.util.List;
 public class CompactDisc extends Disc implements Playable {
     private String artist;
     private List<Track> tracks;
-    private static int nbCD=0;
+    
    
 
     public CompactDisc(String title, String category, float cost, String artist) {
         super(title, category, cost);
         this.artist = artist;
         this.tracks = new ArrayList<>();
-        this.id=nbCD;
-        nbCD++;
     }
 
  
@@ -84,6 +82,39 @@ public void play(){
         for (Track track : tracks) {
            track.play();
         }
+
+
+    }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("CompactDisc - ");
+
+        if (super.getTitle() != null) {
+            builder.append(super.getTitle());
+        }
+        builder.append(" - ");
+
+        if (super.getCategory() != null) {
+            builder.append(super.getCategory());
+        }
+        builder.append(" - ");
+
+        if (super.getCost() >= 0) {
+            builder.append(String.format("%.2f $", super.getCost()));
+        }
+        
+        builder.append(" - ");
+
+        if (artist != null) {
+            builder.append("Artist: ").append(artist);
+        }
+
+        return builder.toString();
+    }
+
+    public static void main(String[] args){
+       // Track track1=new Track();
     }
 }
 

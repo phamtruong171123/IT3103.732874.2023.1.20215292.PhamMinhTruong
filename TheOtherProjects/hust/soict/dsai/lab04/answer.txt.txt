@@ -1,0 +1,23 @@
+9.
+	Cart chứa Media,CD chứa Track.
+10.
+Nếu đối tượng truyền vào không phải là một instance của Media khi 
+ gọi phương thức equals trong lớp Media, thì phương thức equals sẽ trả về false.
+	getClass() != obj.getClass()) return false;
+
+
+12
+ What class should implement the Comparable interface? 
+	-DVD,CD,BOOK
+
+  In those classes, how should you implement the compareTo()method be to reflect the ordering that we
+want?
+	-Phương thức compareTo()
+
+  Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this
+Comparable interface approach?:
+	- Không vì giao diện chỉ có thể có 1 cách sắp xếp duy nhất
+  - Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing
+length, then cost. How would you modify your code to allow this?
+	-Trong lớp DVD, ta có thể triển khai giao diện Comparable và ghi đè phương thức compareTo() để xác định 
+	 quy tắc sắp xếp riêng biệt cho DVD hoặc  có thể sử dụng thenComparing() để thêm các quy tắc sắp xếp phụ thuộc vào các trường khác nhau.

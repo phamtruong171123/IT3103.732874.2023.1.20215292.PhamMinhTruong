@@ -1,10 +1,10 @@
 package hust.soict.dsai.aims.media;
 
-public class DigitalVideoDisc extends Disc{
+public class DigitalVideoDisc extends Disc implements Playable{
   
     private int length;
     private String director;
-    private static int nbDigitalVideoDisc=0;
+   
     public DigitalVideoDisc(String title) {
         super(title);
        }
@@ -12,22 +12,19 @@ public class DigitalVideoDisc extends Disc{
 
     public DigitalVideoDisc(String title, String category, float cost) {
         super(title, category, cost);
-        this.id=nbDigitalVideoDisc;
-        nbDigitalVideoDisc++;
+        
     }
     public DigitalVideoDisc(String director, String category, String title, float cost) {
        super(title,category,cost);
        this.director=director;
-       this.id=nbDigitalVideoDisc;
-        nbDigitalVideoDisc++;
+       
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super(title,category,cost);
         this.director=director;
         this.length=length;
-        this.id=nbDigitalVideoDisc;
-        nbDigitalVideoDisc++;
+      
     }
 
     public String toString() {
@@ -79,5 +76,6 @@ public class DigitalVideoDisc extends Disc{
         System.out.println("Director: " + getDirector());
         System.out.println("Cost: " + getCost() + " $");
     }
+   
 
 }

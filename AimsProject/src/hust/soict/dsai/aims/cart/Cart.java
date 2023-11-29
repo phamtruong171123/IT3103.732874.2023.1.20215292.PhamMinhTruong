@@ -63,16 +63,19 @@ public class Cart {
         System.out.println("Không tìm thấy đĩa");
         
     } */
-    /* public void Search(String title){
-        for (int i = 0; i < MAX_NUMBERS_ORDERED; i++) {
-            if (itemsOrdered[i] != null && itemsOrdered[i].getTitle().equals(title)) {
-                System.out.print("TÌm thấy thành công :");
-               System.out.println(itemsOrdered[i].toString()); //in ra thông tin đĩa
-               return;
-            }
+    public Media Search(String title){
+        for(Media media: itemOrdered){
+            if(media.equals(title)) return media;
         }
-    System.out.println("Không tìm thấy đĩa");
-    } */
+        return null;
+    }
+     public void printCart(){
+        for(Media media:itemOrdered){
+            System.out.println(media.toString());
+        }
+        System.out.println("Total cost is: " + totalCost()); //in ra tổng tiền trong giỏ hàng;
+   
+    } 
     
    
     
@@ -80,16 +83,20 @@ public class Cart {
 
     public static void main(String[] args) {
         Cart anOrder = new Cart();
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star War", "Science Fiction", "George Lucas", 87, 24.95f);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Animation", "Aladin", 18.99f);
-        //anOrder.addDigitalVideoDisc(dvd3); // thêm dvd1
-       // anOrder.addDigitalVideoDisc(dvd1); //them dvd2
-       // anOrder.addDigitalVideoDisc(dvd2); //thêm dvd3
+        Media dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+        Media dvd2 = new DigitalVideoDisc("Star War", "Science Fiction", "George Lucas", 87, 24.95f);
+        Media dvd3 = new DigitalVideoDisc("Animation", "Aladin", 18.99f);
+        anOrder.addMedia(dvd3); // thêm dvd1
+        anOrder.addMedia(dvd1); //them dvd2
+        anOrder.addMedia(dvd2); //thêm dvd3
         //anOrder.removeDigitalVideoDisc(dvd2); // xóa đĩa 2
-        System.out.println("Total cost is: " + anOrder.totalCost()); //in ra tổng tiền trong giỏ hàng;
-       // anOrder.printCart();
+        
+        anOrder.printCart();
 
        // anOrder.Search("Aladin");
+    }
+
+    public List<Media> getItemOrdered() {
+        return itemOrdered;
     }
 }

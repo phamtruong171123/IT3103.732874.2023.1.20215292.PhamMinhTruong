@@ -6,6 +6,10 @@ import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
 
 public class Store {
+    public ArrayList<Media> getItemInStore() {
+        return itemInStore;
+    }
+
     private ArrayList<Media> itemInStore; // lưu trữ các mặt hàng bằng danh sách liên kết
    
 
@@ -14,29 +18,29 @@ public class Store {
        
     }
 
-    public void addDVD(Media media) {
+    public void addMedia(Media media) {
         itemInStore.add(media);
        
-        System.out.println("Đĩa "+media.getTitle()+" được thêm thành công!");
+        System.out.println("Media "+media.getTitle()+" được thêm thành công!");
     }
 
     public void addMedia(Media... medias) {
         for (Media media : medias) {
             itemInStore.add(media);
-            System.out.println("Đĩa "+media.getTitle()+" được thêm thành công!");
+            System.out.println("Media "+media.getTitle()+" được thêm thành công!");
             
         }
     }
     public void removeMedia(Media media){
         itemInStore.remove(media);
       
-        System.out.println("Đã xóa đĩa "+media.getTitle());
+        System.out.println("Đã xóa Media "+media.getTitle());
     }
     public void removeMedia(Media... medias){
         for(Media media: medias){
             itemInStore.remove(media);
          
-            System.out.println("Đã xóa đĩa "+media.getTitle());
+            System.out.println("Đã xóa Media "+media.getTitle());
         }
     }
     public void printStore(){
@@ -47,6 +51,21 @@ public class Store {
         System.out.println("*******************************************************************");
     }
 
+        public Media searchStore(String title){
+            for(Media media: itemInStore){
+                if(media.getTitle().equals(title)) return media;
+            
+            }
+            return null;
+        }
+        public Media searchStore(int id){
+            for(Media media: itemInStore){
+                if(media.getId()==id) return media;
+            
+            }
+            return null;
+        }
+        
     public static void main(String[] args){
         Store store=new Store();
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);

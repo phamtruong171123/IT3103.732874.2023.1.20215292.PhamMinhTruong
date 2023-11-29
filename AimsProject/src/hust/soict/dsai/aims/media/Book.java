@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Book extends Media{
    
     private List<String> author = new ArrayList<String>();
-    private static int nbBook=0;
+    
 
     public List<String> getAuthor() {
         return author;
@@ -14,8 +14,7 @@ public class Book extends Media{
     
     public Book(String title, String category, float cost) {
         super(title, category, cost);
-        this.id=nbBook;
-        nbBook++;
+     
     }
     public Book(String title, String category, float cost,List<String> author){
         super(title, category, cost);
@@ -39,5 +38,25 @@ public class Book extends Media{
         else{
             System.out.println("Không thể xóa tác giả chưa tồn tại!");
         }
+    }
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Book - ");
+
+        if (super.getTitle() != null) {
+            builder.append(super.getTitle());
+        }
+        builder.append(" - ");
+
+        if (super.getCategory() != null) {
+            builder.append(super.getCategory());
+        }
+        builder.append(" - ");
+
+        if (super.getCost() >= 0) {
+            builder.append(String.format("%.2f $", super.getCost()));
+        }
+
+        return builder.toString();
     }
 }
