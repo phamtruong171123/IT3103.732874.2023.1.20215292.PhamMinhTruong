@@ -2,46 +2,47 @@ package hust.soict.dsai.aims.store;
 
 import java.util.ArrayList;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 public class Store {
-    private ArrayList<DigitalVideoDisc> itemInStore; // lưu trữ các mặt hàng bằng danh sách liên kết
-    private int amount;
+    private ArrayList<Media> itemInStore; // lưu trữ các mặt hàng bằng danh sách liên kết
+   
 
     public Store() {
-        itemInStore = new ArrayList<>();
-        amount = 0;
+        itemInStore = new ArrayList<Media>();
+       
     }
 
-    public void addDVD(DigitalVideoDisc disc) {
-        itemInStore.add(disc);
-        amount++;
-        System.out.println("Đĩa "+disc.getTitle()+" được thêm thành công!");
+    public void addDVD(Media media) {
+        itemInStore.add(media);
+       
+        System.out.println("Đĩa "+media.getTitle()+" được thêm thành công!");
     }
 
-    public void addDVD(DigitalVideoDisc... discs) {
-        for (DigitalVideoDisc disc : discs) {
-            itemInStore.add(disc);
-            System.out.println("Đĩa "+disc.getTitle()+" được thêm thành công!");
-            amount++;
+    public void addMedia(Media... medias) {
+        for (Media media : medias) {
+            itemInStore.add(media);
+            System.out.println("Đĩa "+media.getTitle()+" được thêm thành công!");
+            
         }
     }
-    public void removeDVD(DigitalVideoDisc disc){
-        itemInStore.remove(disc);
-        amount--;
-        System.out.println("Đã xóa đĩa "+disc.getTitle());
+    public void removeMedia(Media media){
+        itemInStore.remove(media);
+      
+        System.out.println("Đã xóa đĩa "+media.getTitle());
     }
-    public void removeDVD(DigitalVideoDisc... discs){
-        for(DigitalVideoDisc disc: discs){
-            itemInStore.remove(disc);
-            amount--;
-            System.out.println("Đã xóa đĩa "+disc.getTitle());
+    public void removeMedia(Media... medias){
+        for(Media media: medias){
+            itemInStore.remove(media);
+         
+            System.out.println("Đã xóa đĩa "+media.getTitle());
         }
     }
     public void printStore(){
         System.out.println("*******************************Store*******************************");
-        for(DigitalVideoDisc disc:itemInStore){
-            System.out.println(disc.toString());
+        for(Media media:itemInStore){
+            System.out.println(media.toString());
         }
         System.out.println("*******************************************************************");
     }
@@ -51,9 +52,9 @@ public class Store {
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star War", "Science Fiction", "George Lucas", 87, 24.95f);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Animation", "Aladin", 18.99f);
-        store.addDVD(dvd1,dvd2,dvd3);
+        store.addMedia(dvd1,dvd2,dvd3);
         store.printStore();
-        store.removeDVD(dvd2);
+        store.removeMedia(dvd2);
         store.printStore();
     }
    
