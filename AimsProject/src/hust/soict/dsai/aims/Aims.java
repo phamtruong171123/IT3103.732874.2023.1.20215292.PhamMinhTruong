@@ -69,7 +69,7 @@ public class Aims {
                                 System.out.println("Choose the type of Media to add(CD/DVD/BOOK)");
                                 String type = scanner.nextLine();
                                 if (type.equalsIgnoreCase("CD")) {
-                                    System.out.println("Please enter title, category, cost, and artist:(Separate by space)");
+                                    System.out.println("Please enter title, category, cost, and artist:(Input each line(Nhập từng dòng))");
                                     String title = scanner.nextLine();
                                     String category = scanner.nextLine();
                                     float cost = scanner.nextFloat();
@@ -89,7 +89,7 @@ public class Aims {
                                     }
                                     store.addMedia(cd);
                                 } else if (type.equalsIgnoreCase("DVD")) {
-                                    System.out.println("Please enter director, category, title, cost:(Separate by space)");
+                                    System.out.println("Please enter director, category, title, cost:(Input each line(Nhập từng dòng))");
                                     String director = scanner.nextLine();
                                     String category = scanner.nextLine();
                                     String title = scanner.nextLine();
@@ -99,7 +99,7 @@ public class Aims {
                                     DigitalVideoDisc dvd = new DigitalVideoDisc(director, category, title, cost);
                                     store.addMedia(dvd);
                                 } else if (type.equalsIgnoreCase("BOOK")) {
-                                    System.out.println("Please enter title, category, and cost :(Separate by space)");
+                                    System.out.println("Please enter title, category, and cost :(Input each line(Nhập từng dòng))");
                                     String title = scanner.nextLine();
                                     String category = scanner.nextLine();
                                     float cost = scanner.nextFloat();
@@ -111,6 +111,7 @@ public class Aims {
                             case 2:
                                 System.out.print("Enter title to delete: ");
                                 String deleteTitle = scanner.nextLine();
+                                
                                 store.removeMedia(store.searchStore(deleteTitle));
                                 break;
                             case 0:

@@ -32,15 +32,21 @@ public class Store {
         }
     }
     public void removeMedia(Media media){
-        itemInStore.remove(media);
+        if(media!=null)
+        {
+            System.out.println("Đã xóa Media "+media.getTitle());
+            itemInStore.remove(media);
       
-        System.out.println("Đã xóa Media "+media.getTitle());
+        }
+        else System.out.println( "Media không tồn tại!");
     }
     public void removeMedia(Media... medias){
         for(Media media: medias){
-            itemInStore.remove(media);
+            if(media!=null)
+            {itemInStore.remove(media);
          
-            System.out.println("Đã xóa Media "+media.getTitle());
+            System.out.println("Đã xóa Media "+media.getTitle());}
+            else System.out.println(media.getTitle()+ " không tồn tại!");
         }
     }
     public void printStore(){
@@ -73,7 +79,7 @@ public class Store {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Animation", "Aladin", 18.99f);
         store.addMedia(dvd1,dvd2,dvd3);
         store.printStore();
-        store.removeMedia(dvd2);
+        store.removeMedia(store.searchStore("S"));
         store.printStore();
     }
    
