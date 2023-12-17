@@ -66,7 +66,7 @@ public class MediaStore extends JPanel{
         public void actionPerformed(ActionEvent e) {
            JDialog  notify=createNotify(media);
            notify.setVisible(true);
-           
+            isAdded=true;
        
         }
     }
@@ -93,7 +93,7 @@ public class MediaStore extends JPanel{
         public void actionPerformed(ActionEvent e) {
            JDialog play=createPlayDialog(media);
            play.setVisible(true);
-           isAdded=true;
+          
         }
     }
 
