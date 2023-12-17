@@ -1,0 +1,9 @@
+1 Compare Swing and AWT elements
+	Container cấp cao nhất:
+
+AWT:  top-level container chính là Frame (hoặc Window, Dialog, Applet).
+Swing: top-level container chính là JFrame (hoặc JWindow, JDialog, JApplet). Swing cung cấp các phiên bản tương ứng với các container AWT, nhưng tất cả đều bắt đầu bằng "J" (ví dụ: JFrame thay vì Frame).
+	Tên lớp của các thành phần:
+
+AWT: Các thành phần AWT có tên bắt đầu bằng chữ in hoa và không có tiền tố "J". Ví dụ: Button, TextField, Label.
+Swing: Các thành phần Swing có tên bắt đầu bằng chữ in hoa và thường có tiền tố "J". Ví dụ: JButton, JTextField, JLabel.

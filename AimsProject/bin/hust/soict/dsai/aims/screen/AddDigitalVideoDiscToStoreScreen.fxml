@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label layoutX="53.0" layoutY="50.0" text="Director" />
+      <Label layoutX="53.0" layoutY="100.0" text="Category" />
+      <Label layoutX="53.0" layoutY="150.0" text="Title" />
+      <Label layoutX="53.0" layoutY="200.0" text="Cost" />
+      <TextField fx:id="directorTextField" layoutX="150.0" layoutY="46.0" />
+      <TextField fx:id="categoryTextField" layoutX="150.0" layoutY="96.0" />
+      <TextField fx:id="titleTextField" layoutX="150.0" layoutY="146.0" />
+      <TextField fx:id="costTextField" layoutX="150.0" layoutY="196.0" />
+      <Button layoutX="150.0" layoutY="250.0" mnemonicParsing="false" onAction="#handleAddDVD" text="Add DVD" />
+   </children>
+</AnchorPane>

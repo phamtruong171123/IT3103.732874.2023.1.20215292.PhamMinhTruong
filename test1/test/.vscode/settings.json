@@ -1,0 +1,16 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx.base.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx.controls.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx.media.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx.swing.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx.web.jar",
+        "c:\\Users\\Dell\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\\javafx-swt.jar",
+        "C:\\Users\\Dell\\OneDrive - Hanoi University of Science and Technology\\Documents\\Toán 12\\IT3103.732874.2023.1.20215292.PhamMinhTruong\\test1\\test\\lib\\charm-glisten-6.2.1"
+    ]
+}
